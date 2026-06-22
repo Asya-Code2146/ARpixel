@@ -327,13 +327,69 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Navbar Mobile Adjustment */
     .navbar {
-        padding: 1.2rem 5%;
+        padding: 1rem 5%;
     }
-    .hero h1 { font-size: 2.4rem; }
-    .section-title { font-size: 2rem; }
-    .container { padding: 4rem 1.2rem; }
+
+    /* Memunculkan tombol menu hamburger di HP */
+    .menu-toggle { 
+        display: block; 
+        font-size: 1.5rem;
+        color: var(--neon-cyan);
+    }
+
+    /* Menyembunyikan menu bawaan agar tidak meluber ke samping kanan */
+    .nav-links { 
+        display: none; 
+        /* Tips: Jika ingin membuat menu drop-down nanti menggunakan JavaScript, 
+        kamu bisa membuat class .nav-links.active { display: flex; flex-direction: column; }
+        */
+    }
+
+    /* Hero Section Adjustment */
+    .hero {
+        height: auto; /* Mengubah dari 65vh ke auto agar konten panjang tidak terpotong */
+        padding: 5rem 1rem 3rem 1rem;
+    }
+
+    .hero h1 { 
+        font-size: 2.2rem; /* Diperkecil sedikit agar pas dengan lebar layar HP */
+        line-height: 1.2;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Container & Typography */
+    .container { 
+        padding: 3rem 1rem; 
+    }
+    
+    .section-title { 
+        font-size: 1.8rem; 
+    }
+    
+    .subtitle {
+        margin-bottom: 3rem;
+        font-size: 0.85rem;
+    }
+
+    /* Grid Layouts */
+    .service-grid, .features-grid {
+        grid-template-columns: 1fr; /* Memaksa 1 kolom lurus ke bawah di HP */
+        gap: 1.5rem;
+    }
+
     .contact-wrapper {
-        grid-template-columns: 1fr; /* Otomatis berbaris ke bawah di layar HP */
+        grid-template-columns: 1fr; /* Memaksa kartu sosmed berbaris rapi ke bawah */
+        gap: 1.2rem;
+    }
+
+    .card, .feature-item, .contact-card {
+        padding: 2rem 1.5rem; /* Memperkecil padding dalam card agar space lebih efisien */
+        min-height: auto; /* Di HP, biarkan tinggi card mengikuti konten secara alami */
     }
 }
