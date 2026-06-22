@@ -42,4 +42,31 @@ document.addEventListener("DOMContentLoaded", () => {
     if(document.getElementById('typing-text')) {
         typingEffect();
     }
+
+    /* ==========================================================================
+       TAMBAHAN: Logika Hamburger Menu (Garis Tiga) Aktif
+       ========================================================================== */
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            // Jika menu sedang terbuka, kita sembunyikan lagi
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                // Jika menu sedang sembunyi, kita tampilkan secara vertikal di bawah navbar
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = 'rgba(4, 6, 13, 0.95)';
+                navLinks.style.padding = '20px';
+                navLinks.style.gap = '1.5rem';
+                navLinks.style.borderBottom = '1px solid rgba(0, 240, 255, 0.08)';
+            }
+        });
+    }
 });
